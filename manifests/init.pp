@@ -13,7 +13,7 @@
 #
 
 class sysctl {
-  package{'sysctl':
+  package{'procps':
     ensure => present,
   }
 }

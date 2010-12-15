@@ -1,4 +1,7 @@
-define sysctl::value($value){
+define sysctl::value(
+  $value
+){
+  require sysctl
   exec{"exec_sysctl_$name":
     command => "sysctl $name=$value",
     refreshonly => true,
