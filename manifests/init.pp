@@ -12,8 +12,11 @@
 # the Free Software Foundation.
 #
 
-class sysctl {
+class sysctl(
+  $parameters = hiera_hash('sysctl::parameters'),
+) {
   package{'procps':
     ensure => present,
   }
+  create_resources('::sysctl::value', mangle_hash($parameters))
 }
